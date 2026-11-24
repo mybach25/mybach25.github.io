@@ -1,0 +1,49 @@
+:root {
+  --bg: #fbfaf6;
+  --surface: #ffffff;
+  --text: #23261f;
+  --muted: #5d6257;
+  --brand: #5f6b46;
+  --accent: #a9844f;
+  --line: #e4e0d4;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #171914;
+    --surface: #1f221b;
+    --text: #ecebe4;
+    --muted: #b3b5a9;
+    --brand: #b7c48f;
+    --accent: #d6b27c;
+    --line: #33372c;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+a { color: var(--brand); text-underline-offset: 3px; }
+a:hover { color: var(--accent); }
+header, main, footer { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 24px; padding-bottom: 8px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); font-weight: 700; font-size: 1.15rem; }
+.mark { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--brand); color: var(--bg); font-weight: 800; letter-spacing: -0.5px; }
+nav { display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.95rem; }
+nav a { text-decoration: none; color: var(--muted); }
+nav a[aria-current="page"] { color: var(--text); font-weight: 600; }
+main { padding-top: 24px; padding-bottom: 48px; }
+h1 { font-size: clamp(1.7rem, 4vw, 2.3rem); line-height: 1.2; margin: 0 0 12px; }
+h2 { font-size: 1.2rem; margin: 32px 0 8px; }
+.lead { font-size: 1.1rem; color: var(--muted); margin-top: 0; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 24px 0; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+.card strong { display: block; margin-bottom: 4px; }
+.card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+ul { padding-left: 1.2rem; }
+li { margin: 4px 0; }
+footer { border-top: 1px solid var(--line); padding-top: 16px; padding-bottom: 32px; color: var(--muted); font-size: 0.9rem; }
